@@ -1,0 +1,268 @@
+*{
+    box-sizing: border-box;
+    /* width: 100%; here temporary in case something happen undo*/
+}
+body{
+    margin: 0;
+    padding: 0;
+    
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(46, 42, 42);
+    align-items: center;
+    color: wheat;
+}
+.brand-title{
+    margin: 25px;
+    font-family: 'Fjalle One', sans-serif;
+    color: rgb(252, 143, 0);
+    text-align: center;
+    text-transform: uppercase;
+    
+}
+.brand-title strong{
+    color: whitesmoke;
+}
+.navbar-links ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li{
+    list-style: none;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: wheat;
+    padding: 2.6rem;
+    display: block;
+}
+.navbar-links li:hover {
+    background-color: rgb(184, 122, 8);
+}
+.toggle-button{
+    position: absolute;
+    top: 2.5rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 31px;
+    height: 21px;
+    align-items: center;
+}
+
+.toggle-button .bar{
+    height: 3px;
+    width: 100%;
+    background-color: wheat;
+    border-radius: 10px;
+}
+
+@media(max-width: 600px){
+    .toggle-button{
+        display: flex;
+    }
+    
+    .navbar-links {
+        width: 100%;
+       display: none;
+    }
+
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links li{
+        text-align: center;
+    }
+    .navbar-links li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+}
+/* Here we start adding styles to the hero-slideshow */
+.hero-slideshow{ 
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    font-size: 20px;
+    background-color: black;
+    color: wheat;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden; 
+}
+
+.slideshow-item{
+    
+    width: inherit;
+    height: inherit; 
+    position: absolute;
+    opacity: 0;  
+    animation: cycleImages 21s infinite;
+}
+
+.slideshow-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: zoom 31s infinite
+}
+
+.slideshow-item:nth-child(1),
+.slideshow-item:nth-child(1) img{
+    animation-delay: 5s;
+}
+
+.slideshow-item:nth-child(2),
+.slideshow-item:nth-child(2) img{
+    animation-delay: 10s;
+}
+
+.slideshow-item:nth-child(3)
+.slideshow-item:nth-child(3) img{
+    animation-delay: 20s;
+}
+
+
+
+.slideshow-item-text{
+    max-width: 45%;
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, .5);
+    padding: .5rem ;
+}
+
+.slideshow-item-text h5{
+    font-size: 2rem;
+    font-family: 'Fjalle One', sans-serif;
+    text-transform: uppercase;
+    /* letter-spacing: 1.5px; */
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.slideshow-item-text p{
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    /* letter-spacing: 1.5px; */
+    margin-bottom: 1rem;
+    font-weight: 200;
+}
+
+@keyframes cycleImages {
+    25%{
+        opacity: 1;
+    }
+    40%{
+        opacity: 0;
+    }
+}
+
+@keyframes zoom {
+    100%{
+        transform: scale(1.3);
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .slideshow-item-text{
+        max-width: 70%;
+        padding: 5rem 1rem;
+    }
+    .slideshow-item-text h5{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .slideshow-item-text{
+        max-width: 100%;
+        padding: 1rem;
+        top: initial;
+        bottom: 0;
+        transform: initial;
+    }
+    .slideshow-item-text h5{
+        font-size: 1rem;
+    }
+
+    .slideshow-item-text p{
+        font-size: 0.7rem;
+    }
+}
+
+/* Here we start styling the footer*/
+footer{
+    box-sizing: border-box;
+    color: white;
+    /* position: fixed; */
+    width: 100%;
+    background-color:  rgb(46, 42, 42);
+    font-family: 'Fjalle One', sans-serif;
+    margin-top: 0;
+    padding-top: 0;
+    padding: .5rem;
+}
+
+.main-content{
+    display: flex;
+} 
+
+.main-content .box{
+    flex-basis: 40%;
+    padding: 10px 20px;
+}
+.social a{
+    color: white;
+}
+
+.box h3{
+font-size: 1.125rem;
+font-weight: 600;
+text-transform: uppercase;
+}
+
+.box .content{
+     margin: 40px 0 0 0;
+}
+
+.left .content .social{
+    margin: 25px 0 0 0;
+}
+
+
+.left .content .social a{
+    padding: 0 2px;
+}
+
+.social a span{
+    height: 40px;
+    width: 40px;
+     background: rgba(0, 0, 0, .5);; 
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+

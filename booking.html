@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" onsubmit="return validated()">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now!</title>
+    <link rel="stylesheet" href="bookstyle.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="label">User Login</h1>
+        <form action="login_form" method="post" name="form">
+            <div class="font"> Email or Phone</div>
+            <input  type="text" name="email">
+            <div class="emailerror" id="email_error"> Please fill Up Email or Phone</div>
+            <div class="font2"> Password</div>
+            <input type="password" name="password">
+            <div class="passerror" id="pass_error"> Please fill Up Password</div>
+            <div class="login">
+            <button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+    <script src="valid.js"></script>
+</body>
+</html>
